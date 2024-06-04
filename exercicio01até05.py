@@ -23,21 +23,21 @@ def somaPar(matriz):
     return sum(par)
 
 def somaColuna(matriz):
-    Coluna = []
+    sColuna = []
     for i in range(0, nLinha):
         for j in range(escolhaColuna - 1, escolhaColuna):
-            Coluna.append(matriz[i][j])
-    return Coluna
+            sColuna.append(matriz[i][j])
+    return sColuna
 
 def maiorLinha(matriz):
-    Linha = []
+    mLinha = []
     maior = int(0)
     for i in range(escolhaLinha - 1, escolhaLinha):
         for j in range(0, nColuna):
             if maior < matriz[i][j]:
                 maior = matriz[i][j]
-    Linha.append(maior)
-    return Linha
+    mLinha.append(maior)
+    return mLinha
             
     
 armazenarMatriz = criarMatriz(nLinha, nColuna)
@@ -45,7 +45,7 @@ imprimirMatriz(armazenarMatriz)
 print(somaPar(armazenarMatriz))
 
 while True:
-    escolhaColuna = int(input("Informe a coluna da matriz que quer somar: "))
+    escolhaColuna = int(input("Escolha a coluna da matriz que quer somar: "))
     if escolhaColuna > nColuna or escolhaColuna == 0:
         print("Número inválido")
         continue
@@ -55,7 +55,7 @@ while True:
 print(f"A soma da coluna {escolhaColuna} é de: {sum(somaColuna(armazenarMatriz))}")
 
 while True:
-    escolhaLinha = int(input("Informe a linha da matriz que quer achar o maior valor: "))
+    escolhaLinha = int(input("Escolha a linha da matriz que quer achar o maior valor: "))
     if escolhaLinha > nLinha or escolhaLinha == 0:
         print("Número inválido")
         continue
